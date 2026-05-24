@@ -8,6 +8,15 @@
 
 ---
 
+## 🖥️ UI Screenshots
+
+### 📊 Live Dashboard — Dark Side Crypto
+![Dashboard UI](assets/screenshots/dashboard.png)
+
+> Real-time candlestick charts, network sentiment score, ML-powered algorithmic matrix, and whale operations — all in one dark-themed interface.
+
+---
+
 ## 🎯 Core Features
 
 ### 📊 Real-Time Market Intelligence
