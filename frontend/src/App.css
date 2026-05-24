@@ -1,0 +1,25 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--dark-bg) 100%);
+  padding: var(--spacing-lg);
+  animation: fadeIn var(--transition-slow);
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app > * {
+  position: relative;
+  z-index: 1;
+}

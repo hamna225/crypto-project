@@ -1,0 +1,200 @@
+.alerts-panel {
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.03) 0%, rgba(255, 0, 110, 0.01) 100%),
+              var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow);
+  animation: slideInUp calc(var(--transition-normal) * 1.1);
+}
+
+.alerts-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: var(--spacing-sm);
+}
+
+.alerts-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.alerts-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.alerts-list::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.alert-item {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.05) 0%, rgba(255, 0, 110, 0.02) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--warning);
+  transition: all var(--transition-normal);
+  animation: slideInUp var(--transition-normal);
+}
+
+.alert-item:hover {
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(255, 0, 110, 0.05) 100%);
+  border-color: var(--primary);
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(255, 0, 110, 0.2);
+}
+
+.alert-item.high {
+  border-left-color: var(--error);
+  background: linear-gradient(135deg, rgba(255, 51, 51, 0.08) 0%, rgba(255, 51, 51, 0.02) 100%);
+}
+
+.alert-item.high:hover {
+  background: linear-gradient(135deg, rgba(255, 51, 51, 0.15) 0%, rgba(255, 51, 51, 0.08) 100%);
+  box-shadow: 0 4px 12px rgba(255, 51, 51, 0.2);
+}
+
+.alert-item.medium {
+  border-left-color: var(--warning);
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.08) 0%, rgba(255, 184, 0, 0.02) 100%);
+}
+
+.alert-item.medium:hover {
+  background: linear-gradient(135deg, rgba(255, 184, 0, 0.15) 0%, rgba(255, 184, 0, 0.08) 100%);
+  box-shadow: 0 4px 12px rgba(255, 184, 0, 0.2);
+}
+
+.alert-item.low {
+  border-left-color: var(--primary);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.08) 0%, rgba(0, 212, 255, 0.02) 100%);
+}
+
+.alert-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.alert-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.alert-type {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.alert-message {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.alert-time {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.empty-alerts {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-tertiary);
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.alert-config {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  animation: slideInUp calc(var(--transition-normal) * 1.2);
+}
+
+.alert-config p {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.alert-config ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.alert-config li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding-left: var(--spacing-lg);
+  position: relative;
+}
+
+.alert-config li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .alerts-panel {
+    padding: var(--spacing-lg);
+  }
+
+  .alert-item {
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .alert-time {
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+
+  .alert-config {
+    padding: var(--spacing-md);
+  }
+
+  .alert-config ul {
+    gap: var(--spacing-sm);
+  }
+}

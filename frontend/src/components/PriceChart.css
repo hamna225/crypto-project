@@ -1,0 +1,118 @@
+.price-chart {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(255, 0, 110, 0.03) 100%),
+              var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow);
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  animation: slideInUp var(--transition-normal);
+}
+
+.price-chart h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.chart-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.05) 0%,
+    rgba(255, 0, 110, 0.05) 100%
+  );
+  min-height: 300px;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 350px;
+}
+
+.chart-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 30% 40%,
+    rgba(0, 212, 255, 0.08) 0%,
+    transparent 50%
+  );
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  min-height: 300px;
+  padding: var(--spacing-lg);
+  flex-direction: column;
+}
+
+.chart-message {
+  text-align: center;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.chart-message p:first-child {
+  font-size: 3rem;
+  margin: 0;
+  opacity: 0.6;
+}
+
+.chart-message p:last-child {
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.chart-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.chart-loading::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--primary);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .price-chart {
+    min-height: 350px;
+    padding: var(--spacing-lg);
+  }
+
+  .price-chart h2 {
+    font-size: 1.25rem;
+  }
+
+  .chart-placeholder {
+    min-height: 250px;
+  }
+
+  .chart-message p:first-child {
+    font-size: 2rem;
+  }
+}
